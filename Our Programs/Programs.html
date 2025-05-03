@@ -1337,96 +1337,95 @@
 
 <script>
 
-function showOneTime() {
-    document.getElementById("one-time-fields").classList.remove("hidden");
-    document.getElementById("one-time-fields").classList.add("visible");
-    document.getElementById("recurring-fields").classList.remove("visible");
-    document.getElementById("recurring-fields").classList.add("hidden");
-    document.querySelector(".one-time").classList.add("active");
-    document.querySelector(".recurring").classList.remove("active");
-  }
-
-  function showRecurring() {
-    document.getElementById("one-time-fields").classList.remove("visible");
-    document.getElementById("one-time-fields").classList.add("hidden");
-    document.getElementById("recurring-fields").classList.remove("hidden");
-    document.getElementById("recurring-fields").classList.add("visible");
-    document.querySelector(".recurring").classList.add("active");
-    document.querySelector(".one-time").classList.remove("active");
-  }
-
-function openOverlay() {
-    document.getElementById('overlay').style.display = 'flex';
-  }
-
-  function closeOverlay() {
-    document.getElementById('overlay').style.display = 'none';
-  }
-
-  function openTop3Overlay() {
-    document.getElementById('top3-overlay').style.display = 'flex';
-  }
-
-  function closeTop3Overlay() {
-    document.getElementById('top3-overlay').style.display = 'none';
-  }
-
-  function openShopOverlay() {
-    document.getElementById('shopOverlay').style.display = 'flex';
-  }
-  function closeShopOverlay() {
-    document.getElementById('shopOverlay').style.display = 'none';
-  }
-  const galleryImages = [
-    "images/gallery/photo1.jpg",
-    "images/gallery/photo2.jpg",
-    "images/gallery/photo3.jpg",
-    "images/gallery/photo4.jpg",
-    "images/gallery/photo5.jpg",
-    "images/gallery/photo6.jpg",
-    "images/gallery/photo7.jpg",
-    "images/gallery/photo8.jpg",
-    "images/gallery/photo9.jpg",
-    "images/gallery/photo10.jpg",
-    "images/gallery/photo11.jpg",
-    "images/gallery/photo12.jpg",
-    "images/gallery/photo13.jpg",
-    "images/gallery/photo14.jpg",
-    "images/gallery/photo15.jpg"
+  function showOneTime() {
+      document.getElementById("one-time-fields").classList.remove("hidden");
+      document.getElementById("one-time-fields").classList.add("visible");
+      document.getElementById("recurring-fields").classList.remove("visible");
+      document.getElementById("recurring-fields").classList.add("hidden");
+      document.querySelector(".one-time").classList.add("active");
+      document.querySelector(".recurring").classList.remove("active");
+    }
+  
+    function showRecurring() {
+      document.getElementById("one-time-fields").classList.remove("visible");
+      document.getElementById("one-time-fields").classList.add("hidden");
+      document.getElementById("recurring-fields").classList.remove("hidden");
+      document.getElementById("recurring-fields").classList.add("visible");
+      document.querySelector(".recurring").classList.add("active");
+      document.querySelector(".one-time").classList.remove("active");
+    }
+    function openOverlay() {
+      document.getElementById('overlay').style.display = 'flex';
+    }
+  
+    function closeOverlay() {
+      document.getElementById('overlay').style.display = 'none';
+    }
+  
+    function openTop3Overlay() {
+      document.getElementById('top3-overlay').style.display = 'flex';
+    }
+  
+    function closeTop3Overlay() {
+      document.getElementById('top3-overlay').style.display = 'none';
+    }
+  
+    function openShopOverlay() {
+      document.getElementById('shopOverlay').style.display = 'flex';
+    }
+    function closeShopOverlay() {
+      document.getElementById('shopOverlay').style.display = 'none';
+    }
+    const galleryImages = [
+    { src: "../../Gallery Images/Magdalena.jpg", caption: "Magdalena",subcaption: "Approx. 2 years old" },
+    { src: "../../Gallery Images/Mateo.jpg", caption: "Mateo",subcaption: "Approx. 2 years old" },
+    { src: "../../Gallery Images/Lorna.jpeg", caption: "Approx. 5 years old" },
+    { src: "../../Gallery Images/Tala.jpg", caption: "Approx. 4 years old" },
+    { src: "../../Gallery Images/Violet.jpg", caption: "Daisy with her new toy" },
+    { src: "images/gallery/photo6.jpg", caption: "Buddy at the vet" },
+    { src: "images/gallery/photo7.jpg", caption: "Milo lounging in the sun" },
+    { src: "images/gallery/photo8.jpg", caption: "Sadie wagging her tail" },
+    { src: "images/gallery/photo9.jpg", caption: "Coco exploring the park" },
+    { src: "images/gallery/photo10.jpg", caption: "Oliver enjoying a treat" },
+    { src: "images/gallery/photo11.jpg", caption: "Chloe playing fetch" },
+    { src: "images/gallery/photo12.jpg", caption: "Rocky napping peacefully" },
+    { src: "images/gallery/photo13.jpg", caption: "Lucy meeting her new family" },
+    { src: "images/gallery/photo14.jpg", caption: "Toby chasing butterflies" },
+    { src: "images/gallery/photo15.jpg", caption: "Molly looking curious" }
   ];
-
+  
   let currentGalleryPage = 1;
   const imagesPerPage = 5;
-
+  
   function openGalleryOverlay() {
     document.getElementById('galleryOverlay').style.display = 'flex';
     showGalleryPage(currentGalleryPage);
   }
-
+  
   function closeGalleryOverlay() {
     document.getElementById('galleryOverlay').style.display = 'none';
   }
-
+  
   function showGalleryPage(page) {
-  const grid = document.getElementById('galleryGrid');
-  const start = (page - 1) * imagesPerPage;
-  const end = start + imagesPerPage;
-  const pageImages = galleryImages.slice(start, end);
-
-  grid.innerHTML = pageImages
-    .map((src, index) => `
-      <div class="gallery-item">
-        <img src="${src}" alt="Gallery Image">
-        <p class="gallery-caption">Photo ${start + index + 1}</p>
-      </div>
-    `)
-    .join('');
-
-  document.getElementById('galleryPageIndicator').innerText =
-    `Page ${page} of ${Math.ceil(galleryImages.length / imagesPerPage)}`;
-}
-
-
+    const grid = document.getElementById('galleryGrid');
+    const start = (page - 1) * imagesPerPage;
+    const end = start + imagesPerPage;
+    const pageImages = galleryImages.slice(start, end);
+  
+    grid.innerHTML = pageImages
+      .map(({ src, caption, subcaption }) => `
+        <div class="gallery-item">
+          <img src="${src}" alt="${caption}">
+          <p class="gallery-caption">${caption}</p>
+          <p class="gallery-subcaption">${subcaption}</p>
+        </div>
+      `)
+      .join('');
+  
+    document.getElementById('galleryPageIndicator').innerText =
+      `Page ${page} of ${Math.ceil(galleryImages.length / imagesPerPage)}`;
+  }
+  
   function changePage(offset) {
     const maxPage = Math.ceil(galleryImages.length / imagesPerPage);
     const newPage = currentGalleryPage + offset;
@@ -1435,5 +1434,33 @@ function openOverlay() {
       showGalleryPage(currentGalleryPage);
     }
   }
-</script>
+  
+  
+    function openDonationOverlayRenamed() {
+      document.getElementById('donationOverlayRenamed').style.display = 'flex';
+    }
+  
+    function closeDonationOverlayRenamed() {
+      document.getElementById('donationOverlayRenamed').style.display = 'none';
+    }
+  
+    function showOneTime() {
+      document.getElementById("one-time-fields").classList.remove("hidden");
+      document.getElementById("one-time-fields").classList.add("visible");
+      document.getElementById("recurring-fields").classList.remove("visible");
+      document.getElementById("recurring-fields").classList.add("hidden");
+      document.querySelector(".one-time").classList.add("active");
+      document.querySelector(".recurring").classList.remove("active");
+    }
+  
+    function showRecurring() {
+      document.getElementById("one-time-fields").classList.remove("visible");
+      document.getElementById("one-time-fields").classList.add("hidden");
+      document.getElementById("recurring-fields").classList.remove("hidden");
+      document.getElementById("recurring-fields").classList.add("visible");
+      document.querySelector(".recurring").classList.add("active");
+      document.querySelector(".one-time").classList.remove("active");
+    }
+  
+  </script> 
 </html>
