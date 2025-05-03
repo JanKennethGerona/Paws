@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Dental Invoice</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f4f6f8;
+    }
+    .form-container {
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .service-group {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .service-group input {
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+
+<div class="form-container">
+  <h2>Create Dental Clinic Invoice</h2>
+  <form action="/submit-invoice" method="POST">
+    
+    <div class="form-group">
+      <label for="patientName">Patient Name</label>
+      <input type="text" id="patientName" name="patientName" required>
+    </div>
+
+    <div class="form-group">
+      <label for="patientEmail">Patient Email</label>
+      <input type="email" id="patientEmail" name="patientEmail">
+    </div>
+
+    <div class="form-group">
+      <label for="invoiceDate">Invoice Date</label>
+      <input type="date" id="invoiceDate" name="invoiceDate" required>
+    </div>
+
+    <div class="form-group">
+      <label for="dueDate">Due Date</label>
+      <input type="date" id="dueDate" name="dueDate" required>
+    </div>
+
+    <h3>Services Provided</h3>
+
+    <div id="services">
+      <div class="service-group">
+        <input type="text" name="serviceDescription[]" placeholder="Service (e.g., Teeth Cleaning)" required>
+        <input type="number" name="serviceFee[]" placeholder="Fee ($)" step="0.01" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <button type="button" onclick="addService()">+ Add Another Service</button>
+    </div>
+
+    <div class="form-group">
+      <label for="taxRate">Tax Rate (%)</label>
+      <input type="number" id="taxRate" name="taxRate" placeholder="e.g. 5" step="0.01">
+    </div>
+
+    <div class="form-group">
+      <label for="notes">Additional Notes</label>
+      <textarea id="notes" name="notes" rows="4" placeholder="Enter any additional notes (e.g., Payment Instructions)..."></textarea>
+    </div>
+
+    <button type="submit">Generate Invoice</button>
+  </form>
+</div>
+
+<script>
+function addService() {
+  const servicesDiv = document.getElementById('services');
+  const newService = document.createElement('div');
+  newService.classList.add('service-group');
+  newService.innerHTML = `
+    <input type="text" name="serviceDescription[]" placeholder="Service (e.g., Tooth Extraction)" required>
+    <input type="number" name="serviceFee[]" placeholder="Fee ($)" step="0.01" required>
+  `;
+  servicesDiv.appendChild(newService);
+}
+</script>
+
+</body>
+</html>

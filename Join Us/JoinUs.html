@@ -1,0 +1,1644 @@
+<head>
+    <title>Join Us</title>
+    <link rel="shortcut icon" type="image/x-icon" href="logo.png" />
+</head>
+<style>
+    .blank {
+        margin-top: 10%;
+        display: flex;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+    }
+
+    header {
+      background-color: rgba(52, 52, 52, 0.2);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header img.logo {
+        height: 50px;
+    }
+
+    nav a {
+        margin: 0 10px;
+        text-decoration: none;
+        color: #ffffff;
+        font-weight: bold;
+    }
+
+    .donate-button {
+        background-color: #28a745;
+        color: white;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .hero {
+        background-color: #e7e6e6cc;
+        /* Light gray with transparency */
+        text-align: left;
+        /* Align text to the left */
+        padding: 80px 20px 40px;
+        /* Padding for the hero section */
+        height: 500px;
+        /* Fixed height for the hero section */
+        display: flex;
+        /* Flexbox for layout */
+        flex-direction: column;
+        /* Stack items vertically */
+        padding-left: 8%;
+    }
+
+    .hero h1 {
+        font-size: 90px;
+        /* Font size for the heading */
+        font-weight: bold;
+        /* Bold font weight */
+        color: #4CAF4F;
+        /* Dark gray color for the text */
+    }
+
+    .hero-content {
+        display: flex;
+        /* Flexbox for layout */
+        flex-direction: column;
+        /* Stack items vertically */
+        justify-content: center;
+        /* Center items vertically */
+        align-items: flex-start;
+        /* Align items to the left */
+    }
+
+    .hero-content h1 {
+        margin: 0;
+        /* Remove default margin */
+        padding-bottom: 20px;
+        /* Space below the heading */
+    }
+
+    #orientation {
+        background-color: #666060;
+        /* Light gray background */
+        padding: 20px;
+        /* Padding for the orientation section */
+        border-radius: 5px;
+        /* Rounded corners */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        /* Shadow effect */
+        margin: 20px;
+        /* Margin around the section */
+        max-width: 40%;
+        margin-left: 5%;
+        margin-top: 5%;
+        height: fit-content;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #orientation h2 {
+        font-size: 45px;
+        /* Font size for the heading */
+        color: #ffffff;
+        /* Dark gray color for the text */
+        display: inline;
+    }
+
+    #orientation p {
+        color: #ffffff;
+        /* Dark gray color for the text */
+        margin-top: 10px;
+        /* Space above the paragraph */
+    }
+
+    #FAQs {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin: 20px;
+        width: 45%;
+        margin-right: 5%;
+        margin-top: 5%;
+        height: fit-content;
+        padding-top: 42px;
+    }
+
+
+    .faq-item {
+        margin-bottom: 10px;
+    }
+
+    .faq-question {
+        width: 100%;
+        background-color: #454746;
+        color: white;
+        border: none;
+        padding: 10px;
+        text-align: left;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+        outline: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .faq-question:hover {
+        background-color: #218838;
+    }
+
+    .faq-answer {
+        max-height: 0;
+        /* Initially hidden */
+        overflow: hidden;
+        /* Hide content that exceeds max-height */
+        padding: 0;
+        /* Remove padding when hidden */
+        background-color: #e8f5e9;
+        border-radius: 5px;
+        margin-top: 5px;
+        font-size: 14px;
+        color: #333;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+        /* Smooth transition */
+    }
+
+    .faq-answer p {
+        margin: 0;
+    }
+
+    .faq-answer.open {
+        max-height: 200px;
+        /* Adjust based on the content height */
+        padding: 10px;
+        /* Add padding when visible */
+    }
+
+    .boxes {
+        background-color: transparent;
+        width: 32%;
+        height: fit-content;
+        text-wrap: break-word;
+        text-overflow: ellipsis;
+        border-radius: 5%;
+        padding: 10px;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 40px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    }
+
+    .boxes h1{
+        color: #444444;
+    }
+
+    .boxes:hover {
+        transform: translateY(-10px); /* Slightly lift the box on hover */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+    }
+
+    .boxes2 {
+        background-color: transparent;
+        width: 22%;
+        height: fit-content;
+        text-wrap: break-word;
+        text-overflow: ellipsis;
+        border-radius: 5%;
+        padding: 10px;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 40px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    }
+
+    .boxes2 h1{
+        color: #444444;
+    }
+
+    .boxes2:hover {
+        transform: translateY(-10px); /* Slightly lift the box on hover */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+    }
+
+    .boxes2 img {
+        width: 100%;
+        height: auto;
+        border-radius: 5%;
+        margin-bottom: 10px;
+    }
+
+    .footer {
+      background: white;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+    }
+    .footer-content {
+      display: flex;
+      width: 100%;
+      max-width: 1200px;
+      justify-content: space-between;
+      background: #f2fff2;
+      padding: 20px;
+      border-radius: 8px;
+      align-items: start;
+      flex-wrap: wrap;
+    }
+    .footer-column {
+      flex: 1;
+      margin: 10px;
+      min-width: 200px;
+    }
+    .footer-column h4 {
+      margin-bottom: 15px;
+    }
+    .footer-column p,
+    .footer-column a {
+      display: block;
+      color: #333;
+      text-decoration: none;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+    .footer-bottom {
+      background: #009900;
+      color: white;
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+    .footer-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+    }
+    .footer-icon img {
+      width: 40px;
+      height: 40px;
+      padding: 8px;
+      border-radius: 50%;
+    }
+    .footer-container {
+      display: flex;
+      align-items: start;
+      width: 100%;
+      max-width: 1200px;
+      flex-wrap: wrap;
+    }
+    .footer-section {
+      flex: 1;
+      margin: 10px;
+      min-width: 200px;
+    }
+
+    .footer-title {
+      margin-bottom: 15px;
+    }
+
+    .footer-text,
+    .footer-link {
+      display: block;
+      color: #333;
+      text-decoration: none;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .footer-bar {
+      background: #009900;
+      color: white;
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+
+    .social-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+    }
+
+    .social-icon img {
+      width: 40px;
+      height: 40px;
+      padding: 8px;
+      border-radius: 50%;
+    }
+
+    .footer-wrapper {
+      display: flex;
+      align-items: start;
+    }
+
+       /* Overlay background */
+.overlay-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Overlay box */
+.overlay {
+  background: linear-gradient(to bottom right, #e6f4e6, #d0ebd0);
+  padding: 40px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 1000px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  position: relative;
+  justify-content: center;
+  align-items: center;
+
+}
+
+/* Overlay heading */
+.overlay h1 {
+  text-align: center;
+  color: green;
+  font-size: 36px;
+  margin-bottom: 40px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Form layout */
+.form-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Input and textarea fields */
+.form-container input,
+.form-container textarea {
+  background: #eee7f3;
+  border: none;
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  width: 100%;
+  resize: none;
+}
+
+/* Field width modifiers */
+.form-container .half {
+  flex: 0 0 45%;
+}
+
+.form-container .full {
+  flex: 0 0 90%;
+}
+
+/* Submit button container */
+.send-btn {
+  margin-top: 30px;
+}
+
+/* Submit button styles */
+.send-btn button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: right;
+}
+
+.send-btn button:hover {
+  background-color: #45a049;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: #333;
+}
+
+.close-btn:hover {
+  color: red;
+}
+
+.top3-overlay-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.top3-overlay {
+    background: linear-gradient(to bottom right, #e6f4e6, #d0ebd0);
+    padding: 40px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 1200px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.top3-title {
+    background: white;
+    padding: 20px 40px;
+    border-radius: 10px;
+    display: inline-block;
+    font-weight: bold;
+    color: green;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.top3-note {
+    font-size: 13px;
+    color: #333;
+    text-align: right;
+    margin-bottom: 30px;
+}
+
+.top3-content {
+    position: relative;
+    width: 100%;
+    height: 350px;
+}
+
+.top3-question {
+    width: 300px;
+    position: absolute;
+    text-align: left;
+}
+
+.top3-question h3 {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.top3-question p {
+    font-size: 14px;
+    color: #555;
+    margin-top: 5px;
+}
+
+.top3-question a {
+    color: green;
+    display: block;
+    margin: 5px 0;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.top3-question.q1 {
+    top: 0;
+    left: 0;
+}
+
+.top3-question.q2 {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.top3-question.q3 {
+    top: 0;
+    right: 0;
+}
+
+.top3-browse-button {
+    margin-top: 40px;
+    text-align: right;
+}
+
+.top3-browse-button button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.top3-browse-button button:hover {
+    background-color: #45a049;
+}
+
+.top3-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #333;
+}
+
+.top3-close-btn:hover {
+    color: red;
+}
+
+
+/* Matched Shop Overlay Styles to Overlay 1 */
+.shopOverlay-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 40px 20px;
+  }
+
+  .shopOverlay {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 1200px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+
+  .card {
+    background: #fff;
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+
+  .card img {
+    width: 80%;
+    height: 50px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+
+  .price {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+
+  .buy-button {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #2BB673;
+    color: white;
+    padding: 10px 20px;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+
+  .buy-button:hover {
+    background-color: #2BB673;
+    /* match overlay 1 (no hover color) */
+  }
+
+  .shopOverlay .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    color: #333;
+    cursor: pointer;
+    font-weight: bold;
+    background: none;
+    border: none;
+  }
+
+  .shopOverlay .close-btn:hover {
+    color: #333;
+    /* match overlay 1 (no red on hover) */
+  }
+
+  
+  .gallery-overlay-background {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.gallery-overlay {
+  background: white;
+  padding: 30px;
+  width: 80%;
+  max-height: 90%;
+  overflow-y: auto;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+}
+
+.gallery-overlay .close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 20px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.gallery-pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.gallery-pagination button {
+  padding: 10px 20px;
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gallery-caption {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+    .gallery-caption p {
+        font-size: 14px;
+        color: #666;
+    }
+  @media (max-width: 992px) {
+    .grid-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .grid-container {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .overlay-donation {
+      position: fixed;
+      display: none;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 999;
+    }
+
+    .overlay-content-donation {
+      background-color: #7AC76F;
+      width: 90%;
+      max-width: 850px;
+      height: 90%;
+      margin: auto;
+      top: 5%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      position: absolute;
+      padding: 20px 25px;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      z-index: 2000;
+    }
+
+    .overlay-content-donation h1 {
+      text-align: center;
+      color: #fff;
+      margin-bottom: 10px;
+      font-size: 32px;
+    }
+
+    .form-container-donation {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .form-left-donation {
+      flex: 1;
+      min-width: 230px;
+    }
+
+    .form-left-donation input,
+    .form-left-donation select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 6px;
+      border: none;
+      border-radius: 5px;
+      background-color: #e0dce1;
+      font-size: 13px;
+      box-sizing: border-box;
+    }
+
+    .form-left-donation .donate-button {
+      background-color: black;
+      color: white;
+      padding: 10px;
+      width: 100%;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 14px;
+      margin-top: 6px;
+    }
+
+    .form-right-donation {
+      flex: 1;
+      min-width: 230px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .form-right-donation img {
+      width: 100%;
+      max-width: 160px;
+      border-radius: 10px;
+    }
+
+    .donation-type {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .donation-type button {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      border-radius: 5px;
+      font-weight: bold;
+      background-color: #ccc;
+      color: black;
+      transition: background-color 0.3s;
+    }
+
+    .donation-type .active {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .bottom-section {
+      background-color: #ecf7ec;
+      padding: 15px;
+      margin-top: 10px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      font-size: 12px;
+      gap: 10px;
+    }
+
+    .bottom-section > div {
+      flex: 1;
+      min-width: 150px;
+      color: #333;
+    }
+
+    .bottom-section strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 13px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    ul li {
+      margin-bottom: 4px;
+    }
+
+    ul li a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    ul li a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .form-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .bottom-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+
+    /* Animated transition styling */
+    .form-section-donation {
+      transition: opacity 0.4s ease, max-height 0.4s ease;
+      overflow: hidden;
+    }
+
+    .form-section-donation.hidden {
+      opacity: 0;
+      max-height: 0;
+      pointer-events: none;
+    }
+
+    .form-section-donation.visible {
+      opacity: 1;
+      max-height: 800px;
+      pointer-events: auto;
+    }
+
+</style>
+
+<body>
+    <header>
+        <img src="logo.png" alt="Logo" class="logo">
+        <nav>
+          <a href="../Landing Page/Landing.html">Home</a>
+          <a href="../../About us/Aboutus.html">About Us</a>
+            <a href="javascript:void(0);" onclick="openGalleryOverlay()">Our Animals</a>
+            <a href="../../Kapon/Kapon.html">Spay</a>
+            <a href="../../Join Us/JoinUs.html">Get Involved</a>
+            <a href="javascript:void(0);" onclick="openTop3Overlay()">FAQs</a>
+            <a href="javascript:void(0);" onclick="openOverlay()">Contact Us</a>
+            <a href="javascript:void(0);" onclick="openShopOverlay()">Shop</a>
+        </nav>
+
+        <button class="donate-button" onclick="document.getElementById('overlay-donation').style.display='block'">Donate</button>
+    </header>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Volunteer</h1>
+            <p>When you become a volunteer, you will get assigned a variety of tasks such as dog walking, kennel
+                cleaning, and assisting during outreach programs. <br>
+                Most of our volunteers have full-time jobs and families, and they have different skills and interests.
+                You, too, can help in your own way. Read on below to <br> see how you can be part of the PAWS family.
+            </p>
+            <button class="donate-button" style="max-width: max-content; margin-top: 40px; padding: 16px 25px;">How to
+                Apply</button>
+            <button class="donate-button" style="max-width: max-content; margin-top: 40px; padding: 16px 25px;">Types of
+                Volunteer Work</button>
+        </div>
+    </div>
+
+    <div class="blank">
+        <div id="orientation">
+            <h2 style="color: #666060;">-- -- -</h2>
+            <h2>Volunteer </h2>
+            <h2 style="color: #D2EBD3;">Orientation</h2>
+            <p>We have temporarily closed the Volunteer Applications. We will open the application portal by May 1,
+                2025, for those who can attend the next PAWS VOLUNTEER ORIENTATION which is on June 7, 2025 – 10am to
+                1pm. <br><br>
+                We are calling for volunteer applicants who can render on-site direct animal care work at the PAWS
+                shelter in QC during office hours (Mondays to Saturdays, except Wednesdays, between the hours of 8am to
+                5pm). The required minimum hours is 8 hours a month for 6 months. <br><br>
+                <b style="color: rgb(225, 85, 85);">Note:</b> The 8 hours may be rendered on a staggered basis over a
+                course of several days within the month. <br><br>
+                <b style="color: rgb(225, 85, 85);">IMPORTANT:</b> Many applicants only attend the orientation but don’t
+                come back to volunteer. As a show of commitment, we are now asking all applicants for a P1000 deposit
+                which will be returned after rendering at least 8 hours of volunteer work per month for 6 consecutive
+                months. Only applications with a verified deposit will be accepted. Should an applicant fall short of
+                the volunteer requirement, their P1000 deposit will be forfeited and used for medication and treatment
+                of our special-needs shelter animals.
+            </p>
+        </div>
+
+        <div id="FAQs">
+            <div class="faq-item">
+                <button class="faq-question">What is required to become a volunteer?</button>
+                <div class="faq-answer">
+                    <p>All volunteers must first submit the application form, deposit 1000 (which will be returned after
+                        rendering at least 8 hours of volunteer work per month for 6 consecutive months) and attend the
+                        orientation.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Is there a strict schedule or time quota for volunteer work?</button>
+                <div class="faq-answer">
+                    <p>You can volunteer every day, once a week, once a month, or whenever your schedule allows it.
+                        However, to be considered an active, bona fide PAWS volunteer, you must render at least eight
+                        (8) hours of volunteer work every month. </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">What is an "active volunteer"?</button>
+                <div class="faq-answer">
+                    <p>You are considered an volunteer if you render at least eight (8) hours of volunteer work per
+                        month. Active volunteers get included in special activities, events, and workshops. Volunteers
+                        who foster shelter animals are automatically awarded their 8-hours for each month that they
+                        foster.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Is there an age requirement for volunteers?</button>
+                <div class="faq-answer">
+                    <p>No. However, minors are required to attend the orientation with a parent or guardian. When
+                        volunteering, children below 13 must also be supervised by their parent or guardian.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">I can't make it to orientation. Can I still volunteer?</button>
+                <div class="faq-answer">
+                    <p>A certain level of knowledge and familiarity with our policies are required in order to perform
+                        your volunteer duties. Therefore, all volunteers are required to attend orientation.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Can I get a certificate for my volunteer work?</button>
+                <div class="faq-answer">
+                    <p>As a charity organization, we do not give volunteer certificates to students for academic
+                        compliance. Volunteering is generally considered an altruistic activity where one dedicates
+                        their time and resources for no financial or social gain.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Can I submit my application form on the day of the orientation?</button>
+                <div class="faq-answer">
+                    <p>No. All applications must be submitted within the designated period so that we have time to
+                        screen and confirm all attendees before the scheduled orientation date.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="blank" style="margin: 5%; margin-top: 10%; margin-bottom: 10%;">
+        <div class="boxes" style="background-color: #249C00;">
+            <h1>Shelter Feeding</h1>
+            <br>
+            <p>Prepare a tasty and nutritious meal with your group to feed our shelter animals.</p>
+            <br><br>
+            <button class="donate-button">Schedule Feeding</button>
+        </div>
+
+        <div class="boxes" style="margin-left: 2%; background-color: #B4DDA7;">
+            <h1>Shelter Cleaning</h1>
+            <br>
+            <p>This is a a practical, low-budget way for your group to help out at the shelter.</p>
+            <br><br>
+            <button class="donate-button">Schedule Cleaning</button>
+        </div>
+
+        <div class="boxes" style="margin-left: 2%; background-color: #E2F2DD;">
+            <h1>Project CALM</h1>
+            <br>
+            <p>Read poetry and children’s stories to our shelter animals to ease their anxiety.</p>
+            <br><br>
+            <button class="donate-button">Schedule Reading</button>
+        </div>
+    </div>
+
+
+    <!-- ------------------------------------------------------------------------------------------ -->
+
+<div class="AllBoxes2" style="background-color:#B4DDA7; padding-top: 5%;">
+    <div class="blank" style="margin: 5%; margin-top: 1%; justify-content: center;">
+        <div class="boxes2" >
+            <img src="images/v245_3029.png" alt="pick">
+            <h1>Direct Animal Care</h1>
+  
+            <p>Volunteers who have had their pre-exposure rabies shots can walk and bathe the dogs, groom and socialize the cats, help with cleaning cages and feeding, and other tasks that require direct contact with animals.</p>
+
+            
+        </div>
+
+        <div class="boxes2" style="margin-left: 2%;">
+            <img src="images/v245_3036.png" alt="pick">
+            <h1>Office/Admin Work</h1>
+
+            <p>Admin Assistants must be familiar with PAWS policies to be able to assist in answering visitors’ questions and concerns, providing counseling, processing paperwork, and giving tours to PARC to visitors.            </p>
+
+            
+        </div>
+
+        <div class="boxes2" style="margin-left: 2%;">
+            <img src="images/v245_3043.png" alt="pick">
+            <h1>Humane Education</h1>
+
+            <p>Volunteers can be trained to conduct seminars for schools, barangays, and private companies. Topics include Responsible Pet Ownership, Spay & Neuter, and other important Animal Welfare issues.</p>
+   
+           
+        </div>
+        
+    </div>
+    <div class="blank" style="margin: 3%; justify-content: center;">
+      
+        <div class="boxes2">
+            <img src="images/v301_1092.png" alt="pick">
+            <h1>Adoption Counseling</h1>
+            <p>The adoption team is responsible for screening and interviewing adoption applicants. They also assist in selecting the best pet for the applicant, so being acquainted with the shelter animals is a big advantage.</p>
+            
+        </div>
+
+        <div class="boxes2" style="margin-left: 2%;">
+            <img src="images/v301_1094.png" alt="pick">
+            <h1>Events</h1>
+
+            <p>PAWS often conducts fundraisers and other events in different locations. Volunteers are asked to help in many ways, including setting up and manning our booths, handing out flyers and handling the animals.</p>
+          
+        </div>
+
+        <div class="boxes2" style="margin-left: 2%;">
+            <img src="images/v301_1096.png" alt="pick">
+            <h1>Training & Rehabilitation</h1>
+
+            <p>Volunteers interested in this area must first attend the workshop with our Dog Behavior Specialist and be committed to the program schedule. The workshop is scheduled regularly and announced to the volunteer group.            </p>
+
+           
+        </div>
+        
+    </div>
+    <div class="blank" style="margin: 3%; justify-content: center;">
+        
+        <div class="boxes2">
+            <img src="images/v301_1115.png" alt="pick">
+            <h1>Foster Care</h1>
+
+            <p>Fostering is life-saving work. By fostering, you are making your home an extension of the shelter by making room for one or several rescued animals temporarily. Fosters are considered active volunteers.</p>
+
+            
+        </div>
+
+        <div class="boxes2" style="margin-left: 2%;">
+            <img src="images/v301_1117.png" alt="pick">
+            <h1>Social Media</h1>
+    
+            <p>To be part of this team, you need a deep understanding of our programs and policies. Our SocMed volunteers are responsible for posting updates on our pages, taking photos, creating graphics, or responding to comments.</p>
+ 
+            
+        </div>
+
+        <div class="boxes2" style="margin-left: 2%;">
+            <img src="images/v301_1119.png" alt="pick">
+            <h1>Clinic</h1>
+      
+            <p>A volunteer may be asked to assist in some clinical or surgical procedures on animals, but they need to be vaccinated against rabies, have prior experience, or a senior volunteer who is willing to undergo training.</p>
+    
+           
+        </div>
+        
+    </div>
+    <div class="blank" style="margin: 3%; justify-content: center; margin-bottom: 0%;">
+        
+        <div class="boxes2">
+            <img src="images/v301_1138.png" alt="pick">
+            <h1>Disaster Relief</h1>
+           
+            <p>PAWS performs rescue operations in times of calamities, particularly when animals need to be removed from danger zones. Volunteers who wish to participate must receive special training in this area.</p>
+         
+            
+        </div>
+
+        <div class="boxes2" style="margin-left: 2%;">
+            <img src="images/v301_1140.png" alt="pick">
+            <h1>Lobbying & Legal Work</h1>
+           
+            <p>Volunteers who are familiar with the legal system are most welcome to assist in this area. Tasks include attending hearings, meeting with government officials and providing legal assistance in court cases.</p>
+          
+            
+        </div>
+
+        <div class="boxes2" style="margin-left: 2%;">
+            <img src="images/v301_1142.png" alt="pick">
+            <h1>Dr. Dog Activities</h1>
+            
+            <p>If you are the owner or handler of a certified Dr. Dog, you automatically become a volunteer. You and your dog can participate in Dr. Dog activities held in nursing homes, orphanages, and similar establishments.            </p>
+          
+           
+        </div>
+        
+    </div>
+
+</div>
+
+<!-- Gallery Overlay -->
+<div id="galleryOverlay" class="gallery-overlay-background">
+  <div class="gallery-overlay">
+    <button class="close-btn" onclick="closeGalleryOverlay()">X</button>
+    <h2>Gallery</h2>
+    <div class="gallery-grid" id="galleryGrid"></div>
+    <div class="gallery-pagination">
+      <button onclick="changePage(-1)">← Prev</button>
+      <span id="galleryPageIndicator">Page 1 of 3</span>
+      <button onclick="changePage(1)">Next →</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- Contact Overlay -->
+<div class="overlay-background" id="overlay">
+    <div class="overlay">
+        <button class="close-btn" onclick="closeOverlay()">X</button>
+        <h1>CONTACT</h1>
+        <form class="form-container">
+            <input type="text" placeholder="First name" class="half">
+            <input type="text" placeholder="Last name" class="half">
+            <input type="email" placeholder="Email" class="half">
+            <input type="text" placeholder="Contact Number" class="half">
+            <textarea rows="6" placeholder="Message" class="full"></textarea>
+            <div class="send-btn">
+                <button type="submit">SEND</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Top 3 Questions Overlay -->
+<div class="top3-overlay-background" id="top3-overlay">
+    <div class="top3-overlay">
+        <button class="top3-close-btn" onclick="closeTop3Overlay()">X</button>
+        <div class="top3-title">TOP 3 QUESTIONS:</div>
+        <div class="top3-note">
+            Most of your questions are already addressed on our website so please take the time to read. <strong>We can't respond right away to emails or social media comments.</strong>
+        </div>
+        <div class="top3-content">
+            <div class="top3-question q1">
+                <h3>Do you have a branch in XXXXXX?</h3>
+                <p>
+                    No, we don't have other branches.<br>
+                    We only have one PAWS office and animal shelter, both located on Aurora Blvd. Katipunan Valley, Loyola Heights QC.<br>
+                    For assistance outside of Manila, you may contact your LGU or City Vet’s office.
+                </p>
+            </div>
+            <div class="top3-question q3">
+                <h3>How do I ADOPT / VOLUNTEER / DONATE?</h3>
+                <p>Here:</p>
+                <a href="#">ADOPT</a>
+                <a href="#">VOLUNTEER</a>
+                <a href="#">DONATE</a>
+            </div>
+            <div class="top3-question q2">
+                <h3>Do you ADOPT / RESCUE animals?</h3>
+                <p>Short answer: PAWS does NOT adopt animals.</p>
+            </div>
+        </div>
+        <div class="top3-browse-button">
+            <button>BROWSE ALL</button>
+        </div>
+    </div>
+</div>
+
+  <!-- Shop Overlay -->
+  <div id="shopOverlay" class="shopOverlay-background">
+    <div class="shopOverlay">
+      <button class="close-btn" onclick="closeShopOverlay()">X</button>
+      <div class="grid-container">
+        <div class="card">
+          <img src="your-image1.png" alt="Christmas E-Card">
+          <div class="price">₱200</div>
+          <a href="#" class="buy-button">Buy From Shopify</a>
+        </div>
+        <div class="card">
+          <img src="your-image2.png" alt="Limited Edition PAWS Calendar">
+          <div class="price">₱300</div>
+          <a href="#" class="buy-button">Buy From Shopee</a>
+        </div>
+        <div class="card">
+          <img src="your-image3.png" alt="Canvas Tote Bag">
+          <div class="price">₱200</div>
+          <a href="#" class="buy-button">Buy From Shopee</a>
+        </div>
+
+        <div class="card">
+          <img src="your-image4.png" alt="Canvas Bag">
+          <div class="price">₱650</div>
+          <a href="#" class="buy-button">Buy From Shopee</a>
+        </div>
+
+        <div class="card">
+          <img src="your-image5.png" alt="PAWS Cap">
+          <div class="price">₱300</div>
+          <a href="#" class="buy-button">Buy From Shopee</a>
+        </div>
+
+        <div class="card">
+          <img src="your-image6.png" alt="Mugs Multiple Designs">
+          <div class="price">₱300</div>
+          <a href="#" class="buy-button">Buy From Shopee</a>
+        </div>
+
+        <div class="card">
+          <img src="your-image7.png" alt="White Mugs Multiple Designs">
+          <div class="price">₱200</div>
+          <a href="#" class="buy-button">Buy From Shopee</a>
+        </div>
+
+        <div class="card">
+          <img src="your-image8.png" alt="PAWS Unisex Shirt White">
+          <div class="price">₱400</div>
+          <a href="#" class="buy-button">Buy From Shopee</a>
+        </div>
+
+        <div class="card">
+          <img src="your-image9.png" alt="PAWS Unisex Shirt - Again Lover">
+          <div class="price">₱400</div>
+          <a href="#" class="buy-button">Buy From Shopee</a>
+        </div>
+
+        <div class="card">
+          <img src="your-image10.png" alt="I Love Heart for Animals Shirt">
+          <div class="price">₱400</div>
+          <a href="#" class="buy-button">Buy From Shopee</a>
+        </div>
+
+        <div class="card">
+          <img src="your-image11.png" alt="I Love My Again Shirt">
+          <div class="price">₱400</div>
+          <a href="#" class="buy-button">Buy From Shopee</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <!-- The Overlay -->
+<div id="overlay-donation" class="overlay-donation">
+  <div class="overlay-content-donation">
+    <span class="close-btn" onclick="document.getElementById('overlay-donation').style.display='none'">&times;</span>
+
+    <h1>DONATE ONLINE</h1>
+
+    <div class="form-container-donation">
+      <div class="form-left-donation">
+        <div class="donation-type">
+          <button class="one-time active" onclick="showOneTime()">One-time Donation</button>
+          <button class="recurring" onclick="showRecurring()">Recurring Donation</button>
+        </div>
+
+        <!-- One-time donation form -->
+        <div id="one-time-fields" class="form-section-donation visible">
+          <input type="text" placeholder="First Name">
+          <input type="text" placeholder="Last Name">
+          <input type="email" placeholder="Email">
+          <input type="text" placeholder="Contact Number">
+          <select>
+            <option>Shelter Animals</option>
+            <option>Spay/Neuter Program</option>
+            <option>Rescue Operations</option>
+          </select>
+          <input type="number" placeholder="₱ Amount">
+        </div>
+
+        <!-- Recurring donation form -->
+        <div id="recurring-fields" class="form-section-donation hidden">
+          <input type="text" placeholder="First Name">
+          <input type="text" placeholder="Last Name">
+          <input type="email" placeholder="Email">
+          <input type="text" placeholder="Mobile Number (e.g. 09123456789)">
+          <select>
+            <option>Shelter Animals</option>
+            <option>Spay/Neuter Program</option>
+            <option>Rescue Operations</option>
+          </select>
+          <select>
+            <option>Weekly</option>
+            <option>Monthly</option>
+            <option>Quarterly</option>
+          </select>
+          <input type="date" placeholder="Start Date">
+          <input type="date" placeholder="End Date">
+          <input type="number" placeholder="₱ Amount">
+        </div>
+
+        <button class="donate-button">DONATE</button>
+      </div>
+
+      <div class="form-right-donation">
+        <img src="images/aboutus/qrph.jpg" alt="QR Code 1">
+        <img src="images/aboutus/gcash.jpg" alt="GCash QR Code">
+      </div>
+    </div>
+
+    <div class="bottom-section">
+      <div>
+        <strong>Bank of the Philippine Islands</strong>
+        Acct Name: The Philippine Animal Welfare Society, Inc.<br>
+        USD Acct No. 3944-0021-61<br>
+        PHP Acct No. 3943-0086-11
+      </div>
+
+      <div>
+        <strong>Philippine National Bank</strong>
+        Acct Name: The Philippine Animal Welfare Society, Inc.<br>
+        Acct No. 1888-70015305
+      </div>
+
+      <div>
+        <strong>BDO Savings</strong>
+        Acct Name: The Philippine Animal Welfare Society, Inc.<br>
+        Acct No: 0076-4800-5860
+      </div>
+
+      <div>
+        <strong>Quick Links</strong>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Our Animals</a></li>
+          <li><a href="#">Get Involved</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <strong>Connect With Us</strong>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<footer>
+    <div class="footer">
+  
+      <div class="footer-icon">
+          <img src="logo.png" alt="Icon">
+        </div>
+      <div class="footer-container">
+        
+        <div class="footer-content">
+          <div class="footer-column">
+            <p><strong>Bank of the Philippine Islands (Swift No. BOPIPHMM)</strong></p>
+            <p>Account Name: The Philippine Animal Welfare Society, Inc.</p>
+            <p>USD Account No.: 8794 0213 17</p>
+            <br>
+            <p><strong>Philippine National Bank (Swift No. PNBMPHMM)</strong></p>
+            <p>Account Name: The Philippine Animal Welfare Society, Inc.</p>
+            <p>USD Account No.: 1072 7000 0005</p>
+            <br>
+            <p><strong>BDO Savings</strong></p>
+            <p>Account Name: The Philippine Animal Welfare Society, Inc.</p>
+            <p>Account No.: 00797 0469 900</p>
+          </div>
+  
+          <div class="footer-column">
+            <h4>Quick Links</h4>
+            <a href="#">About Us</a>
+            <a href="#">Our Animals</a>
+            <a href="#">Get Involved</a>
+            <a href="javascript:void(0);" onclick="openTop3Overlay()">FAQs</a>
+            <a href="javascript:void(0);" onclick="openShopOverlay()">Shop</a>
+            <a href="javascript:void(0);" onclick="openOverlay()">Contact Us</a>
+            
+          </div>
+  
+          <div class="footer-column">
+            <h4>Connect With Us</h4>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      Copyright © 2022. All Rights Reserved for Pawt NPO.
+    </div>
+  </footer>
+
+
+    <script>
+
+function showOneTime() {
+    document.getElementById("one-time-fields").classList.remove("hidden");
+    document.getElementById("one-time-fields").classList.add("visible");
+    document.getElementById("recurring-fields").classList.remove("visible");
+    document.getElementById("recurring-fields").classList.add("hidden");
+    document.querySelector(".one-time").classList.add("active");
+    document.querySelector(".recurring").classList.remove("active");
+  }
+
+  function showRecurring() {
+    document.getElementById("one-time-fields").classList.remove("visible");
+    document.getElementById("one-time-fields").classList.add("hidden");
+    document.getElementById("recurring-fields").classList.remove("hidden");
+    document.getElementById("recurring-fields").classList.add("visible");
+    document.querySelector(".recurring").classList.add("active");
+    document.querySelector(".one-time").classList.remove("active");
+  }
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        faqQuestions.forEach((question) => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+
+                // Toggle the 'open' class to apply the transition
+                answer.classList.toggle('open');
+            });
+        });
+
+        function openOverlay() {
+            document.getElementById('overlay').style.display = 'flex';
+        }
+
+        function closeOverlay() {
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        function openTop3Overlay() {
+            document.getElementById('top3-overlay').style.display = 'flex';
+        }
+
+        function closeTop3Overlay() {
+            document.getElementById('top3-overlay').style.display = 'none';
+        }
+
+        function openShopOverlay() {
+    document.getElementById('shopOverlay').style.display = 'flex';
+  }
+  function closeShopOverlay() {
+    document.getElementById('shopOverlay').style.display = 'none';
+  }
+
+  const galleryImages = [
+      { src: "../Gallery Images/Magdalena.jpg", caption: "Magdalena",subcaption: "Approx. 2 years old" },
+      { src: "../Gallery Images/Mateo.jpg", caption: "Mateo",subcaption: "Approx. 2 years old" },
+      { src: "images/gallery/photo3.jpg", caption: "Bella playing in the yard" },
+      { src: "images/gallery/photo4.jpg", caption: "Charlie cuddling in bed" },
+      { src: "images/gallery/photo5.jpg", caption: "Daisy with her new toy" },
+      { src: "images/gallery/photo6.jpg", caption: "Buddy at the vet" },
+      { src: "images/gallery/photo7.jpg", caption: "Milo lounging in the sun" },
+      { src: "images/gallery/photo8.jpg", caption: "Sadie wagging her tail" },
+      { src: "images/gallery/photo9.jpg", caption: "Coco exploring the park" },
+      { src: "images/gallery/photo10.jpg", caption: "Oliver enjoying a treat" },
+      { src: "images/gallery/photo11.jpg", caption: "Chloe playing fetch" },
+      { src: "images/gallery/photo12.jpg", caption: "Rocky napping peacefully" },
+      { src: "images/gallery/photo13.jpg", caption: "Lucy meeting her new family" },
+      { src: "images/gallery/photo14.jpg", caption: "Toby chasing butterflies" },
+      { src: "images/gallery/photo15.jpg", caption: "Molly looking curious" }
+    ];
+    
+    let currentGalleryPage = 1;
+    const imagesPerPage = 5;
+    
+    function openGalleryOverlay() {
+      document.getElementById('galleryOverlay').style.display = 'flex';
+      showGalleryPage(currentGalleryPage);
+    }
+    
+    function closeGalleryOverlay() {
+      document.getElementById('galleryOverlay').style.display = 'none';
+    }
+    
+    function showGalleryPage(page) {
+      const grid = document.getElementById('galleryGrid');
+      const start = (page - 1) * imagesPerPage;
+      const end = start + imagesPerPage;
+      const pageImages = galleryImages.slice(start, end);
+    
+      grid.innerHTML = pageImages
+        .map(({ src, caption, subcaption }) => `
+          <div class="gallery-item">
+            <img src="${src}" alt="${caption}">
+            <p class="gallery-caption">${caption}</p>
+            <p class="gallery-subcaption">${subcaption}</p>
+          </div>
+        `)
+        .join('');
+    
+      document.getElementById('galleryPageIndicator').innerText =
+        `Page ${page} of ${Math.ceil(galleryImages.length / imagesPerPage)}`;
+    }
+    
+    function changePage(offset) {
+      const maxPage = Math.ceil(galleryImages.length / imagesPerPage);
+      const newPage = currentGalleryPage + offset;
+      if (newPage >= 1 && newPage <= maxPage) {
+        currentGalleryPage = newPage;
+        showGalleryPage(currentGalleryPage);
+      }
+    }
+
+    function openDonationOverlayRenamed() {
+        document.getElementById('donationOverlayRenamed').style.display = 'flex';
+      }
+    
+      function closeDonationOverlayRenamed() {
+        document.getElementById('donationOverlayRenamed').style.display = 'none';
+      }
+    
+      function showOneTime() {
+        document.getElementById("one-time-fields").classList.remove("hidden");
+        document.getElementById("one-time-fields").classList.add("visible");
+        document.getElementById("recurring-fields").classList.remove("visible");
+        document.getElementById("recurring-fields").classList.add("hidden");
+        document.querySelector(".one-time").classList.add("active");
+        document.querySelector(".recurring").classList.remove("active");
+      }
+    
+      function showRecurring() {
+        document.getElementById("one-time-fields").classList.remove("visible");
+        document.getElementById("one-time-fields").classList.add("hidden");
+        document.getElementById("recurring-fields").classList.remove("hidden");
+        document.getElementById("recurring-fields").classList.add("visible");
+        document.querySelector(".recurring").classList.add("active");
+        document.querySelector(".one-time").classList.remove("active");
+      }
+
+
+
+    </script>
+</body>
+
+</html>

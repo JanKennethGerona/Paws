@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shop Overlay</title>
+    <style>
+        
+
+        /* Overlay styles */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            padding: 40px 20px;
+        }
+
+        .overlay-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 1200px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        /* Grid styles */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid #ddd;
+            text-align: center;
+            padding: 10px;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .buy-button {
+            display: inline-block;
+            margin-top: 10px;
+            background-color: #2BB673;
+            color: white;
+            padding: 10px 20px;
+            font-size: 14px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        /* Open button */
+        .open-overlay-btn {
+            display: inline-block;
+            margin: 50px auto;
+            padding: 15px 30px;
+            background-color: #2BB673;
+            color: #fff;
+            font-size: 18px;
+            text-decoration: none;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        /* Close button */
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            color: #333;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Button to open overlay -->
+<button class="open-overlay-btn" onclick="openOverlay()">Open Shop</button>
+
+<!-- Overlay -->
+<div id="shopOverlay" class="overlay" onclick="closeOverlay(event)">
+    <div class="overlay-content" onclick="event.stopPropagation()">
+        <span class="close-btn" onclick="closeOverlay(event)">&times;</span>
+        <div class="grid-container">
+            <div class="card">
+                <img src="your-image1.png" alt="Christmas E-Card">
+                <div class="price">₱200</div>
+                <a href="#" class="buy-button">Buy From Shopify</a>
+            </div>
+
+            <div class="card">
+                <img src="your-image2.png" alt="Limited Edition PAWS Calendar">
+                <div class="price">₱300</div>
+                <a href="#" class="buy-button">Buy From Shopee</a>
+            </div>
+
+            <div class="card">
+                <img src="your-image3.png" alt="Canvas Tote Bag">
+                <div class="price">₱200</div>
+                <a href="#" class="buy-button">Buy From Shopee</a>
+            </div>
+
+            <div class="card">
+                <img src="your-image4.png" alt="Canvas Bag">
+                <div class="price">₱650</div>
+                <a href="#" class="buy-button">Buy From Shopee</a>
+            </div>
+
+            <div class="card">
+                <img src="your-image5.png" alt="PAWS Cap">
+                <div class="price">₱300</div>
+                <a href="#" class="buy-button">Buy From Shopee</a>
+            </div>
+
+            <div class="card">
+                <img src="your-image6.png" alt="Mugs Multiple Designs">
+                <div class="price">₱300</div>
+                <a href="#" class="buy-button">Buy From Shopee</a>
+            </div>
+
+            <div class="card">
+                <img src="your-image7.png" alt="White Mugs Multiple Designs">
+                <div class="price">₱200</div>
+                <a href="#" class="buy-button">Buy From Shopee</a>
+            </div>
+
+            <div class="card">
+                <img src="your-image8.png" alt="PAWS Unisex Shirt White">
+                <div class="price">₱400</div>
+                <a href="#" class="buy-button">Buy From Shopee</a>
+            </div>
+
+            <div class="card">
+                <img src="your-image9.png" alt="PAWS Unisex Shirt - Again Lover">
+                <div class="price">₱400</div>
+                <a href="#" class="buy-button">Buy From Shopee</a>
+            </div>
+
+            <div class="card">
+                <img src="your-image10.png" alt="I Love Heart for Animals Shirt">
+                <div class="price">₱400</div>
+                <a href="#" class="buy-button">Buy From Shopee</a>
+            </div>
+
+            <div class="card">
+                <img src="your-image11.png" alt="I Love My Again Shirt">
+                <div class="price">₱400</div>
+                <a href="#" class="buy-button">Buy From Shopee</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openOverlay() {
+        document.getElementById('shopOverlay').style.display = 'flex';
+    }
+
+    function closeOverlay(event) {
+        document.getElementById('shopOverlay').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>

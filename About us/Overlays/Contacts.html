@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Overlay</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    /* Open Contact Button */
+    .open-contact-btn {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .open-contact-btn:hover {
+      background-color: #45a049;
+    }
+
+ 
+    .overlay-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+ 
+    .overlay {
+      background: linear-gradient(to bottom right, #e6f4e6, #d0ebd0);
+      padding: 40px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 1000px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      position: relative;
+    }
+
+    .overlay h1 {
+      text-align: center;
+      color: green;
+      font-size: 36px;
+      margin-bottom: 40px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .form-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+        justify-content: end;
+    }
+
+    .form-container input, .form-container textarea {
+      background: #eee7f3;
+      border: none;
+      padding: 15px;
+      border-radius: 5px;
+      font-size: 16px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      width: 100%;
+      resize: none;
+    }
+
+    .form-container .half {
+      flex: 0 0 45%;
+    }
+
+    .form-container .full {
+      flex: 0 0 95%;
+    }
+
+   
+    .send-btn {
+  margin-top: 30px;
+
+}
+
+
+    .send-btn button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 30px;
+      border-radius: 5px;
+      font-size: 14px;
+      cursor: pointer;
+      text-align: right;
+    }
+
+    .send-btn button:hover {
+      background-color: #45a049;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      background: none;
+      border: none;
+      font-size: 30px;
+      cursor: pointer;
+      color: #333;
+    }
+
+    .close-btn:hover {
+      color: red;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Open Button -->
+  <button class="open-contact-btn" onclick="openOverlay()">Open Contact Form</button>
+
+  <!-- Contact Overlay -->
+  <div class="overlay-background" id="overlay">
+    <div class="overlay">
+      <button class="close-btn" onclick="closeOverlay()">X</button>
+
+      <h1>CONTACT</h1>
+      <form class="form-container">
+        <input type="text" placeholder="First name" class="half">
+        <input type="text" placeholder="Last name" class="half">
+        <input type="email" placeholder="Email" class="half">
+        <input type="text" placeholder="Contact Number" class="half">
+        <textarea rows="6" placeholder="Message" class="full"></textarea>
+
+        <div class="send-btn">
+          <button type="submit">SEND</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+  <script>
+    function openOverlay() {
+      document.getElementById('overlay').style.display = 'flex';
+    }
+
+    function closeOverlay() {
+      document.getElementById('overlay').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>

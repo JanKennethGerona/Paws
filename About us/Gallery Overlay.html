@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gallery Overlay</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+
+    /* Overlay Styles */
+    .gallery-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .gallery-container {
+      background: #fff;
+      padding: 20px;
+      width: 90%;
+      max-width: 1000px;
+      border-radius: 10px;
+      text-align: center;
+      position: relative;
+    }
+
+    .gallery-items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 20px;
+    }
+
+    .gallery-item {
+      width: calc(20% - 10px);
+      text-align: center;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .gallery-nav {
+      margin-top: 20px;
+    }
+
+    .gallery-nav button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      font-size: 16px;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 24px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Button to open gallery -->
+<button onclick="openGallery()">Open Gallery</button>
+
+<!-- Overlay -->
+<div class="gallery-overlay" id="galleryOverlay">
+  <div class="gallery-container">
+    <button class="close-btn" onclick="closeGallery()">✖</button>
+    <div class="gallery-items" id="galleryItems"></div>
+    <div class="gallery-nav">
+      <button onclick="changePage(-1)">Previous</button>
+      <span id="pageNumber">Page 1</span>
+      <button onclick="changePage(1)">Next</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const galleryData = [
+    { img: 'https://via.placeholder.com/150', text: 'Photo 1' },
+    { img: 'https://via.placeholder.com/150', text: 'Photo 2' },
+    { img: 'https://via.placeholder.com/150', text: 'Photo 3' },
+    { img: 'https://via.placeholder.com/150', text: 'Photo 4' },
+    { img: 'https://via.placeholder.com/150', text: 'Photo 5' },
+    { img: 'https://via.placeholder.com/150', text: 'Photo 6' },
+    { img: 'https://via.placeholder.com/150', text: 'Photo 7' },
+    { img: 'https://via.placeholder.com/150', text: 'Photo 8' },
+    { img: 'https://via.placeholder.com/150', text: 'Photo 9' },
+    { img: 'https://via.placeholder.com/150', text: 'Photo 10' },
+    { img: 'https://via.placeholder.com/150', text: 'Photo 11' },
+    { img: 'https://via.placeholder.com/150', text: 'Photo 12' },
+    { img: 'https://via.placeholder.com/150', text: 'Photo 13' },
+    { img: 'https://via.placeholder.com/150', text: 'Photo 14' },
+    { img: 'https://via.placeholder.com/150', text: 'Photo 15' },
+  ];
+
+  let currentPage = 1;
+  const itemsPerPage = 5;
+
+  function renderGalleryPage() {
+    const galleryItems = document.getElementById('galleryItems');
+    const pageNumber = document.getElementById('pageNumber');
+    galleryItems.innerHTML = '';
+
+    const start = (currentPage - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+
+    galleryData.slice(start, end).forEach(item => {
+      const div = document.createElement('div');
+      div.className = 'gallery-item';
+      div.innerHTML = `<img src="${item.img}" alt="${item.text}"><p>${item.text}</p>`;
+      galleryItems.appendChild(div);
+    });
+
+    pageNumber.textContent = `Page ${currentPage}`;
+  }
+
+  function changePage(delta) {
+    const maxPage = Math.ceil(galleryData.length / itemsPerPage);
+    currentPage = Math.max(1, Math.min(currentPage + delta, maxPage));
+    renderGalleryPage();
+  }
+
+  function openGallery() {
+    document.getElementById('galleryOverlay').style.display = 'flex';
+    currentPage = 1;
+    renderGalleryPage();
+  }
+
+  function closeGallery() {
+    document.getElementById('galleryOverlay').style.display = 'none';
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1324 @@
+<head>
+    <title>Kapon</title>
+    <link rel="shortcut icon" type="image/x-icon" href="logo.png" />
+</head>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+    }
+
+    header {
+      background-color: rgba(52, 52, 52, 0.2);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header img.logo {
+        height: 50px;
+    }
+
+    nav a {
+        margin: 0 10px;
+        text-decoration: none;
+        color: #ffffff;
+        font-weight: bold;
+    }
+
+    .donate-button {
+        background-color: #28a745;
+        color: white;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .hero {
+        background: #e7e6e6cc;
+        text-align: left;
+        padding: 80px 20px 40px;
+        height: 500px;
+        height: fit-content;
+        display: flex;
+    }
+
+    .hero h1 {
+        font-size: 40;
+        font-weight: bold;
+        color: #222;
+    }
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        float: left;
+        margin-left: 8%;
+        padding-bottom: 60px;
+    }
+
+    .hero-image {
+        float: right;
+        margin-left: 10%;
+    }
+
+    .hero-image img {
+        max-width: 100%;
+        height: 500px;
+        border-radius: 10px;
+    }
+
+    .program-section {
+        display: flex;
+        gap: 0; /* Remove gap between program items */
+        padding: 0; /* Remove padding around the section */
+        background-color: #F6FFF3;
+    }
+
+    #content-left {
+        display: flex;
+        flex-direction: column;
+        background:none;
+        padding-left: 10%;
+        padding-top: 5%;
+        max-width: 30%;
+        zoom: 1.2;
+        height: 100%;
+    }
+
+    #content-left p{
+        color: #3a3a3a;
+    }
+
+    #content-right {
+        display: flex;
+        flex-direction: column;
+        background: none;
+        padding-left: 15%;
+        max-width: 40%;
+        padding-top: 50px;
+        zoom: 1.2;
+        height: 100%;
+    }
+
+    #content-right img {
+        max-width: 100%;
+        border-radius: 10px;
+    }
+
+    .footer {
+      background: white;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+    }
+    .footer-content {
+      display: flex;
+      width: 100%;
+      max-width: 1200px;
+      justify-content: space-between;
+      background: #f2fff2;
+      padding: 20px;
+      border-radius: 8px;
+      align-items: start;
+      flex-wrap: wrap;
+    }
+    .footer-column {
+      flex: 1;
+      margin: 10px;
+      min-width: 200px;
+    }
+    .footer-column h4 {
+      margin-bottom: 15px;
+    }
+    .footer-column p,
+    .footer-column a {
+      display: block;
+      color: #333;
+      text-decoration: none;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+    .footer-bottom {
+      background: #009900;
+      color: white;
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+    .footer-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+    }
+    .footer-icon img {
+      width: 40px;
+      height: 40px;
+      padding: 8px;
+      border-radius: 50%;
+    }
+    .footer-container {
+      display: flex;
+      align-items: start;
+      width: 100%;
+      max-width: 1200px;
+      flex-wrap: wrap;
+    }
+    .footer-section {
+      flex: 1;
+      margin: 10px;
+      min-width: 200px;
+    }
+
+    .footer-title {
+      margin-bottom: 15px;
+    }
+
+    .footer-text,
+    .footer-link {
+      display: block;
+      color: #333;
+      text-decoration: none;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .footer-bar {
+      background: #009900;
+      color: white;
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+
+    .social-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+    }
+
+    .social-icon img {
+      width: 40px;
+      height: 40px;
+      padding: 8px;
+      border-radius: 50%;
+    }
+
+    .footer-wrapper {
+      display: flex;
+      align-items: start;
+    }
+
+    /* Overlay background */
+    .overlay-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    /* Overlay box */
+    .overlay {
+        background: linear-gradient(to bottom right, #e6f4e6, #d0ebd0);
+        padding: 40px;
+        border-radius: 10px;
+        width: 80%;
+        max-width: 1000px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        position: relative;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Overlay heading */
+    .overlay h1 {
+        text-align: center;
+        color: green;
+        font-size: 36px;
+        margin-bottom: 40px;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+
+    /* Form layout */
+    .form-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    /* Input and textarea fields */
+    .form-container input,
+    .form-container textarea {
+        background: #eee7f3;
+        border: none;
+        padding: 15px;
+        border-radius: 5px;
+        font-size: 16px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        width: 100%;
+        resize: none;
+    }
+
+    /* Field width modifiers */
+    .form-container .half {
+        flex: 0 0 45%;
+    }
+
+    .form-container .full {
+        flex: 0 0 90%;
+    }
+
+    /* Submit button container */
+    .send-btn {
+        margin-top: 30px;
+    }
+
+    /* Submit button styles */
+    .send-btn button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px 30px;
+        border-radius: 5px;
+        font-size: 14px;
+        cursor: pointer;
+        text-align: right;
+    }
+
+    .send-btn button:hover {
+        background-color: #45a049;
+    }
+
+    /* Close button */
+    .close-btn {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        background: none;
+        border: none;
+        font-size: 30px;
+        cursor: pointer;
+        color: #333;
+    }
+
+    .close-btn:hover {
+        color: red;
+    }
+
+    /* Top 3 Questions Overlay Styles */
+    .top3-overlay-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.top3-overlay {
+    background: linear-gradient(to bottom right, #e6f4e6, #d0ebd0);
+    padding: 40px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 1200px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.top3-title {
+    background: white;
+    padding: 20px 40px;
+    border-radius: 10px;
+    display: inline-block;
+    font-weight: bold;
+    color: green;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.top3-note {
+    font-size: 13px;
+    color: #333;
+    text-align: right;
+    margin-bottom: 30px;
+}
+
+.top3-content {
+    position: relative;
+    width: 100%;
+    height: 350px;
+}
+
+.top3-question {
+    width: 300px;
+    position: absolute;
+    text-align: left;
+}
+
+.top3-question h3 {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.top3-question p {
+    font-size: 14px;
+    color: #555;
+    margin-top: 5px;
+}
+
+.top3-question a {
+    color: green;
+    display: block;
+    margin: 5px 0;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.top3-question.q1 {
+    top: 0;
+    left: 0;
+}
+
+.top3-question.q2 {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.top3-question.q3 {
+    top: 0;
+    right: 0;
+}
+
+.top3-browse-button {
+    margin-top: 40px;
+    text-align: right;
+}
+
+.top3-browse-button button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.top3-browse-button button:hover {
+    background-color: #45a049;
+}
+
+.top3-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #333;
+}
+
+.top3-close-btn:hover {
+    color: red;
+}
+
+/* Matched Shop Overlay Styles to Overlay 1 */
+.shopOverlay-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 40px 20px;
+  }
+
+  .shopOverlay {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 1200px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+
+  .card {
+    background: #fff;
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+
+  .card img {
+    width: 80%;
+    height: 50px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+
+  .price {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+
+  .buy-button {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #2BB673;
+    color: white;
+    padding: 10px 20px;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+
+  .buy-button:hover {
+    background-color: #2BB673;
+    /* match overlay 1 (no hover color) */
+  }
+
+  .shopOverlay .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    color: #333;
+    cursor: pointer;
+    font-weight: bold;
+    background: none;
+    border: none;
+  }
+
+  .shopOverlay .close-btn:hover {
+    color: #333;
+    /* match overlay 1 (no red on hover) */
+  }
+
+  
+  .gallery-overlay-background {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.gallery-overlay {
+  background: white;
+  padding: 30px;
+  width: 80%;
+  max-height: 90%;
+  overflow-y: auto;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+}
+
+.gallery-overlay .close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 20px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.gallery-pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.gallery-pagination button {
+  padding: 10px 20px;
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gallery-caption {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+
+
+
+  @media (max-width: 992px) {
+    .grid-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .grid-container {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .donate-button {
+      background-color: #28a745;
+      color: white;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .overlay-donation {
+      position: fixed;
+      display: none;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 999;
+    }
+
+    .overlay-content-donation {
+      background-color: #7AC76F;
+      width: 90%;
+      max-width: 850px;
+      height: 90%;
+      margin: auto;
+      top: 5%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      position: absolute;
+      padding: 20px 25px;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      z-index: 2000;
+    }
+
+    .overlay-content-donation h1 {
+      text-align: center;
+      color: #fff;
+      margin-bottom: 10px;
+      font-size: 32px;
+    }
+
+    .form-container-donation {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .form-left-donation {
+      flex: 1;
+      min-width: 230px;
+    }
+
+    .form-left-donation input,
+    .form-left-donation select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 6px;
+      border: none;
+      border-radius: 5px;
+      background-color: #e0dce1;
+      font-size: 13px;
+      box-sizing: border-box;
+    }
+
+    .form-left-donation .donate-button {
+      background-color: black;
+      color: white;
+      padding: 10px;
+      width: 100%;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 14px;
+      margin-top: 6px;
+    }
+
+    .form-right-donation {
+      flex: 1;
+      min-width: 230px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .form-right-donation img {
+      width: 100%;
+      max-width: 160px;
+      border-radius: 10px;
+    }
+
+    .donation-type {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .donation-type button {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      border-radius: 5px;
+      font-weight: bold;
+      background-color: #ccc;
+      color: black;
+      transition: background-color 0.3s;
+    }
+
+    .donation-type .active {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .bottom-section {
+      background-color: #ecf7ec;
+      padding: 15px;
+      margin-top: 10px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      font-size: 12px;
+      gap: 10px;
+    }
+
+    .bottom-section > div {
+      flex: 1;
+      min-width: 150px;
+      color: #333;
+    }
+
+    .bottom-section strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 13px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    ul li {
+      margin-bottom: 4px;
+    }
+
+    ul li a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    ul li a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .form-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .bottom-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+
+    /* Animated transition styling */
+    .form-section-donation {
+      transition: opacity 0.4s ease, max-height 0.4s ease;
+      overflow: hidden;
+    }
+
+    .form-section-donation.hidden {
+      opacity: 0;
+      max-height: 0;
+      pointer-events: none;
+    }
+
+    .form-section-donation.visible {
+      opacity: 1;
+      max-height: 800px;
+      pointer-events: auto;
+    }
+
+
+</style>
+
+<body>
+  <header>
+    <img src="logo.png" alt="Logo" class="logo">
+      <nav>
+        <a href="../Landing Page/Landing.html">Home</a>
+          <a href="../../About us/Aboutus.html">About Us</a>
+          <a href="javascript:void(0);" onclick="openGalleryOverlay()">Our Animals</a>
+          <a href="../../Kapon/Kapon.html">Spay</a>
+          <a href="../../Join Us/JoinUs.html">Get Involved</a>
+          <a href="javascript:void(0);" onclick="openTop3Overlay()">FAQs</a>
+          <a href="javascript:void(0);" onclick="openOverlay()">Contact Us</a>
+          <a href="javascript:void(0);" onclick="openShopOverlay()">Shop</a>
+      </nav>
+    <button class="donate-button" onclick="document.getElementById('overlay-donation').style.display='block'">Donate</button>
+  </header>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>KAPON</h1>
+            <p>Spay (verb) : to remove the ovaries of a female animal <br> Neuter (verb) : to remove the testicles of a male animal</p>
+            <ul>
+                <li>Reduce chances of breast cancer and pyometra for females</li>
+                <li>Prevent testicular cancer for males</li>
+                <li>No more heat cycles and behavioral changes</li>
+                <li>Reduce tendency to roam outdoors and be exposed to harm</li>
+                <li>Reduce or eliminated habit of spraying and marking</li>
+                <li>Reduce chances of dog fights and cat fights among males</li>
+                <li>Reduce number of unwanted pets and homeless animals</li>
+            </ul>
+            <button class="donate-button" style="max-width: max-content;">BOOK</button>
+        </div>
+        <div class="hero-image">
+            <img src="pic1.png" alt="Hero Image" />
+        </div>
+    </div>
+
+    <div class="program-section" style="padding-bottom: 7%;">
+        <div id="content-left">
+            <h1><br><br><br><small>HOW TO BOOK YOUR PET: </small></h1>
+            <br>
+            <p>1. <b>First, ensure that your cat or dog is at least 6 months old.</b> There is no maximum age but your pet must be healthy.
+                Notes: If your pet had undergone cesarean section or any major surgery in relation to their reproductive organ, please book at another vet clinic as we are not equipped to do the surgery as these cases also need confinement which is not available at the PAWS clinic.
+                If your pets are recently vaccinated or planning to be vaccinated, we recommend scheduling their spay/neuter surgery either two weeks before or two weeks after their vaccination appointment. Our veterinarian advises against performing these procedures too close together, as this can cause undue stress to your pet. <br>  
+                
+                <br>2. <b>Get a blood test:</b> Blood testing (CBC, SGPT, CREA) is required for mixed/purebred pets or pets older than 4 years, but still strongly recommended for younger or healthy looking pets at least 2-7 days before the kapon appointment .
+                *A Blood test package for CBC, SGPT & CREA is available at the PAWS clinic for only P1,250 (inclusive of check-up).  PAWS can only accommodate blood testing at 8:30 am on Monday and Thursday for confirmed clients with reservation of P250. 
+                The blood test at PAWS clinic may be scheduled by our staff prior to the kapon schedule as results cannot be released on the same day. Please also be informed that we do not recommend pursuing blood tests for in-heat female dogs. <br>
+                
+                <br>3. <b>Take photos:</b> You will be asked to submit photos of your pet’s head, body top view, body side view, and genitals.
+                Note: Photos of brachycephalic breed (short-nose dogs), small breeds and overweight breeds are needed to be evaluated first by our veterinarian before getting their blood test as some of them cannot be accommodated at the PAWS clinic as they may need to be confined which is not available at PAWS. <br>
+                <br>4. <b>Pay online:</b> You will be asked to complete your payment  at least 3 days prior to your chosen appointment before a PAWS staff confirm your kapon appointment. You will only be charged the base rate. Additional fees, if any, will be computed on the day of surgery.
+                Ready with the above requirements?</p><br><br><br>
+
+                <button class="donate-button" style="max-width: max-content; margin-top: 40px;">BOOK</button>
+        </div>
+
+        <div id="content-right">
+            <img src="doggy.png" alt="dog">
+            <h1><br><small>HOW TO BOOK YOUR PET: </small></h1>
+            <p>Native Female cat – P1,000 <br>Native Male cat – P700 <br><br>
+
+                Native Female dog up to 15kg – P1,500 <br>Native Female dog between 16-20kg – P2,000 <br>Native Female dog between 21-24kg – P2,500 <br>Native Female dog between 25-35kg – P5,000 <br>Native Male dog up to 15kg – P1,000 <br>Native Male dog between 16-20kg– P1,500
+                
+                <br><br>Additional fees (to be determined on the day of surgery)
+                + P500 for mixed and purebred cats <br>+ P1,000 for mixed and purebred dogs <br>+ P500 for pregnant cats <br>+ P1000 for pregnant dogs <br>+ P300-P500 for male cats with undescended testicle/s <br>+ P500-P1000 for male dogs with undescended testicle/s <br>+ P500 for female cats with pyometra <br>+ P1,000 for female dogs with pyometra <br>+ P500 for every 5 kg in excess of 35kg body weight (Females) <br>+ P500 for every 5 kg in excess of 20kg body weight (Males)
+                
+                <br><br>If your pet is determined to be in a delicate or special <br>
+                condition on the day of surgery, the vet may recommend: <br>
+                + P2,000 – P3,000 for use of gas anesthesia</p>
+
+        </div>
+
+        
+    </div>
+
+<!-- Gallery Overlay -->
+<div id="galleryOverlay" class="gallery-overlay-background">
+  <div class="gallery-overlay">
+    <button class="close-btn" onclick="closeGalleryOverlay()">X</button>
+    <h2>Gallery</h2>
+    <div class="gallery-grid" id="galleryGrid"></div>
+    <div class="gallery-pagination">
+      <button onclick="changePage(-1)">← Prev</button>
+      <span id="galleryPageIndicator">Page 1 of 3</span>
+      <button onclick="changePage(1)">Next →</button>
+    </div>
+  </div>
+</div>
+
+
+    <!-- Contact Overlay -->
+    <div class="overlay-background" id="overlay">
+        <div class="overlay">
+            <button class="close-btn" onclick="closeOverlay()">X</button>
+            <h1>CONTACT</h1>
+            <form class="form-container">
+                <input type="text" placeholder="First name" class="half">
+                <input type="text" placeholder="Last name" class="half">
+                <input type="email" placeholder="Email" class="half">
+                <input type="text" placeholder="Contact Number" class="half">
+                <textarea rows="6" placeholder="Message" class="full"></textarea>
+                <div class="send-btn">
+                    <button type="submit">SEND</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Top 3 Questions Overlay -->
+    <div class="top3-overlay-background" id="top3-overlay">
+        <div class="top3-overlay">
+            <button class="top3-close-btn" onclick="closeTop3Overlay()">X</button>
+            <div class="top3-title">TOP 3 QUESTIONS:</div>
+            <div class="top3-note">
+                Most of your questions are already addressed on our website so please take the time to read. <strong>We can't respond right away to emails or social media comments.</strong>
+            </div>
+            <div class="top3-content">
+                <div class="top3-question q1">
+                    <h3>Do you have a branch in XXXXXX?</h3>
+                    <p>
+                        No, we don't have other branches.<br>
+                        We only have one PAWS office and animal shelter, both located on Aurora Blvd. Katipunan Valley, Loyola Heights QC.<br>
+                        For assistance outside of Manila, you may contact your LGU or City Vet’s office.
+                    </p>
+                </div>
+                <div class="top3-question q3">
+                    <h3>How do I ADOPT / VOLUNTEER / DONATE?</h3>
+                    <p>Here:</p>
+                    <a href="#">ADOPT</a>
+                    <a href="#">VOLUNTEER</a>
+                    <a href="#">DONATE</a>
+                </div>
+                <div class="top3-question q2">
+                    <h3>Do you ADOPT / RESCUE animals?</h3>
+                    <p>Short answer: PAWS does NOT adopt animals.</p>
+                </div>
+            </div>
+            <div class="top3-browse-button" onclick="window.location.href='../../FAQs/FAQs.html'">
+                <button>BROWSE ALL</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shop Overlay -->
+<div id="shopOverlay" class="shopOverlay-background">
+  <div class="shopOverlay">
+    <button class="close-btn" onclick="closeShopOverlay()">X</button>
+    <div class="grid-container">
+      <div class="card">
+        <img src="your-image1.png" alt="Christmas E-Card">
+        <div class="price">₱200</div>
+        <a href="#" class="buy-button">Buy From Shopify</a>
+      </div>
+      <div class="card">
+        <img src="your-image2.png" alt="Limited Edition PAWS Calendar">
+        <div class="price">₱300</div>
+        <a href="#" class="buy-button">Buy From Shopee</a>
+      </div>
+      <div class="card">
+        <img src="your-image3.png" alt="Canvas Tote Bag">
+        <div class="price">₱200</div>
+        <a href="#" class="buy-button">Buy From Shopee</a>
+      </div>
+
+      <div class="card">
+        <img src="your-image4.png" alt="Canvas Bag">
+        <div class="price">₱650</div>
+        <a href="#" class="buy-button">Buy From Shopee</a>
+      </div>
+
+      <div class="card">
+        <img src="your-image5.png" alt="PAWS Cap">
+        <div class="price">₱300</div>
+        <a href="#" class="buy-button">Buy From Shopee</a>
+      </div>
+
+      <div class="card">
+        <img src="your-image6.png" alt="Mugs Multiple Designs">
+        <div class="price">₱300</div>
+        <a href="#" class="buy-button">Buy From Shopee</a>
+      </div>
+
+      <div class="card">
+        <img src="your-image7.png" alt="White Mugs Multiple Designs">
+        <div class="price">₱200</div>
+        <a href="#" class="buy-button">Buy From Shopee</a>
+      </div>
+
+      <div class="card">
+        <img src="your-image8.png" alt="PAWS Unisex Shirt White">
+        <div class="price">₱400</div>
+        <a href="#" class="buy-button">Buy From Shopee</a>
+      </div>
+
+      <div class="card">
+        <img src="your-image9.png" alt="PAWS Unisex Shirt - Again Lover">
+        <div class="price">₱400</div>
+        <a href="#" class="buy-button">Buy From Shopee</a>
+      </div>
+
+      <div class="card">
+        <img src="your-image10.png" alt="I Love Heart for Animals Shirt">
+        <div class="price">₱400</div>
+        <a href="#" class="buy-button">Buy From Shopee</a>
+      </div>
+
+      <div class="card">
+        <img src="your-image11.png" alt="I Love My Again Shirt">
+        <div class="price">₱400</div>
+        <a href="#" class="buy-button">Buy From Shopee</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- The Overlay -->
+ <div id="overlay-donation" class="overlay-donation">
+  <div class="overlay-content-donation">
+    <span class="close-btn" onclick="document.getElementById('overlay-donation').style.display='none'">&times;</span>
+
+    <h1>DONATE ONLINE</h1>
+
+    <div class="form-container-donation">
+      <div class="form-left-donation">
+        <div class="donation-type">
+          <button class="one-time active" onclick="showOneTime()">One-time Donation</button>
+          <button class="recurring" onclick="showRecurring()">Recurring Donation</button>
+        </div>
+
+        <!-- One-time donation form -->
+        <div id="one-time-fields" class="form-section-donation visible">
+          <input type="text" placeholder="First Name">
+          <input type="text" placeholder="Last Name">
+          <input type="email" placeholder="Email">
+          <input type="text" placeholder="Contact Number">
+          <select>
+            <option>Shelter Animals</option>
+            <option>Spay/Neuter Program</option>
+            <option>Rescue Operations</option>
+          </select>
+          <input type="number" placeholder="₱ Amount">
+        </div>
+
+        <!-- Recurring donation form -->
+        <div id="recurring-fields" class="form-section-donation hidden">
+          <input type="text" placeholder="First Name">
+          <input type="text" placeholder="Last Name">
+          <input type="email" placeholder="Email">
+          <input type="text" placeholder="Mobile Number (e.g. 09123456789)">
+          <select>
+            <option>Shelter Animals</option>
+            <option>Spay/Neuter Program</option>
+            <option>Rescue Operations</option>
+          </select>
+          <select>
+            <option>Weekly</option>
+            <option>Monthly</option>
+            <option>Quarterly</option>
+          </select>
+          <input type="date" placeholder="Start Date">
+          <input type="date" placeholder="End Date">
+          <input type="number" placeholder="₱ Amount">
+        </div>
+
+        <button class="donate-button">DONATE</button>
+      </div>
+      <div class="form-right-donation">
+        <img src="/About us/images/aboutus/qrph.jpg" alt="QR Code 1">
+        <img src="/About us/images/aboutus/gcash.jpg" alt="GCash QR Code">
+      </div>
+    </div>
+
+    <div class="bottom-section">
+      <div>
+        <strong>Bank of the Philippine Islands</strong>
+        Acct Name: The Philippine Animal Welfare Society, Inc.<br>
+        USD Acct No. 3944-0021-61<br>
+        PHP Acct No. 3943-0086-11
+      </div>
+
+      <div>
+        <strong>Philippine National Bank</strong>
+        Acct Name: The Philippine Animal Welfare Society, Inc.<br>
+        Acct No. 1888-70015305
+      </div>
+
+      <div>
+        <strong>BDO Savings</strong>
+        Acct Name: The Philippine Animal Welfare Society, Inc.<br>
+        Acct No: 0076-4800-5860
+      </div>
+
+      <div>
+        <strong>Quick Links</strong>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Our Animals</a></li>
+          <li><a href="#">Get Involved</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <strong>Connect With Us</strong>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <footer>
+        <div class="footer">
+      
+          <div class="footer-icon">
+              <img src="logo.png" alt="Icon">
+            </div>
+          <div class="footer-container">
+            
+            <div class="footer-content">
+              <div class="footer-column">
+                <p><strong>Bank of the Philippine Islands (Swift No. BOPIPHMM)</strong></p>
+                <p>Account Name: The Philippine Animal Welfare Society, Inc.</p>
+                <p>USD Account No.: 8794 0213 17</p>
+                <br>
+                <p><strong>Philippine National Bank (Swift No. PNBMPHMM)</strong></p>
+                <p>Account Name: The Philippine Animal Welfare Society, Inc.</p>
+                <p>USD Account No.: 1072 7000 0005</p>
+                <br>
+                <p><strong>BDO Savings</strong></p>
+                <p>Account Name: The Philippine Animal Welfare Society, Inc.</p>
+                <p>Account No.: 00797 0469 900</p>
+              </div>
+      
+              <div class="footer-column">
+                <h4>Quick Links</h4>
+                <a href="#">About Us</a>
+                <a href="#">Our Animals</a>
+                <a href="#">Get Involved</a>
+                <a href="javascript:void(0);" onclick="openTop3Overlay()">FAQs</a>
+                <a href="javascript:void(0);" onclick="openShopOverlay()">Shop</a>
+                <a href="javascript:void(0);" onclick="openOverlay()">Contact Us</a>
+          
+              </div>
+      
+              <div class="footer-column">
+                <h4>Connect With Us</h4>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="footer-bottom">
+          Copyright © 2022. All Rights Reserved for Pawt NPO.
+        </div>
+      </footer>
+
+      <script>
+
+        function showOneTime() {
+            document.getElementById("one-time-fields").classList.remove("hidden");
+            document.getElementById("one-time-fields").classList.add("visible");
+            document.getElementById("recurring-fields").classList.remove("visible");
+            document.getElementById("recurring-fields").classList.add("hidden");
+            document.querySelector(".one-time").classList.add("active");
+            document.querySelector(".recurring").classList.remove("active");
+          }
+        
+          function showRecurring() {
+            document.getElementById("one-time-fields").classList.remove("visible");
+            document.getElementById("one-time-fields").classList.add("hidden");
+            document.getElementById("recurring-fields").classList.remove("hidden");
+            document.getElementById("recurring-fields").classList.add("visible");
+            document.querySelector(".recurring").classList.add("active");
+            document.querySelector(".one-time").classList.remove("active");
+          }
+          function openOverlay() {
+            document.getElementById('overlay').style.display = 'flex';
+          }
+        
+          function closeOverlay() {
+            document.getElementById('overlay').style.display = 'none';
+          }
+        
+          function openTop3Overlay() {
+            document.getElementById('top3-overlay').style.display = 'flex';
+          }
+        
+          function closeTop3Overlay() {
+            document.getElementById('top3-overlay').style.display = 'none';
+          }
+        
+          function openShopOverlay() {
+            document.getElementById('shopOverlay').style.display = 'flex';
+          }
+          function closeShopOverlay() {
+            document.getElementById('shopOverlay').style.display = 'none';
+          }
+          const galleryImages = [
+          { src: "../Gallery Images/Magdalena.jpg", caption: "Magdalena",subcaption: "Approx. 2 years old" },
+          { src: "../Gallery Images/Mateo.jpg", caption: "Mateo",subcaption: "Approx. 2 years old" },
+          { src: "images/gallery/photo3.jpg", caption: "Bella playing in the yard" },
+          { src: "images/gallery/photo4.jpg", caption: "Charlie cuddling in bed" },
+          { src: "images/gallery/photo5.jpg", caption: "Daisy with her new toy" },
+          { src: "images/gallery/photo6.jpg", caption: "Buddy at the vet" },
+          { src: "images/gallery/photo7.jpg", caption: "Milo lounging in the sun" },
+          { src: "images/gallery/photo8.jpg", caption: "Sadie wagging her tail" },
+          { src: "images/gallery/photo9.jpg", caption: "Coco exploring the park" },
+          { src: "images/gallery/photo10.jpg", caption: "Oliver enjoying a treat" },
+          { src: "images/gallery/photo11.jpg", caption: "Chloe playing fetch" },
+          { src: "images/gallery/photo12.jpg", caption: "Rocky napping peacefully" },
+          { src: "images/gallery/photo13.jpg", caption: "Lucy meeting her new family" },
+          { src: "images/gallery/photo14.jpg", caption: "Toby chasing butterflies" },
+          { src: "images/gallery/photo15.jpg", caption: "Molly looking curious" }
+        ];
+        
+        let currentGalleryPage = 1;
+        const imagesPerPage = 5;
+        
+        function openGalleryOverlay() {
+          document.getElementById('galleryOverlay').style.display = 'flex';
+          showGalleryPage(currentGalleryPage);
+        }
+        
+        function closeGalleryOverlay() {
+          document.getElementById('galleryOverlay').style.display = 'none';
+        }
+        
+        function showGalleryPage(page) {
+          const grid = document.getElementById('galleryGrid');
+          const start = (page - 1) * imagesPerPage;
+          const end = start + imagesPerPage;
+          const pageImages = galleryImages.slice(start, end);
+        
+          grid.innerHTML = pageImages
+            .map(({ src, caption, subcaption }) => `
+              <div class="gallery-item">
+                <img src="${src}" alt="${caption}">
+                <p class="gallery-caption">${caption}</p>
+                <p class="gallery-subcaption">${subcaption}</p>
+              </div>
+            `)
+            .join('');
+        
+          document.getElementById('galleryPageIndicator').innerText =
+            `Page ${page} of ${Math.ceil(galleryImages.length / imagesPerPage)}`;
+        }
+        
+        function changePage(offset) {
+          const maxPage = Math.ceil(galleryImages.length / imagesPerPage);
+          const newPage = currentGalleryPage + offset;
+          if (newPage >= 1 && newPage <= maxPage) {
+            currentGalleryPage = newPage;
+            showGalleryPage(currentGalleryPage);
+          }
+        }
+        
+        
+          function openDonationOverlayRenamed() {
+            document.getElementById('donationOverlayRenamed').style.display = 'flex';
+          }
+        
+          function closeDonationOverlayRenamed() {
+            document.getElementById('donationOverlayRenamed').style.display = 'none';
+          }
+        
+          function showOneTime() {
+            document.getElementById("one-time-fields").classList.remove("hidden");
+            document.getElementById("one-time-fields").classList.add("visible");
+            document.getElementById("recurring-fields").classList.remove("visible");
+            document.getElementById("recurring-fields").classList.add("hidden");
+            document.querySelector(".one-time").classList.add("active");
+            document.querySelector(".recurring").classList.remove("active");
+          }
+        
+          function showRecurring() {
+            document.getElementById("one-time-fields").classList.remove("visible");
+            document.getElementById("one-time-fields").classList.add("hidden");
+            document.getElementById("recurring-fields").classList.remove("hidden");
+            document.getElementById("recurring-fields").classList.add("visible");
+            document.querySelector(".recurring").classList.add("active");
+            document.querySelector(".one-time").classList.remove("active");
+          }
+        
+        </script>
+        
+</body>
