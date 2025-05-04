@@ -10,11 +10,14 @@
             font-family: Arial, sans-serif;
             margin: 0;
             background: #f4f4f4;
-            overflow-x: hidden; /* Prevent horizontal scrolling */
-            opacity: 0;
-      transform: translateY(100px);
-      animation: slideFadeIn 0.6s ease forwards;
         }
+
+         .wrapper{
+    opacity: 0;
+    transform: translateY(100px);
+    animation: slideFadeIn 0.6s ease forwards;
+  }
+        
         @keyframes slideFadeIn {
       0% {
         opacity: 0;
@@ -930,6 +933,7 @@
 <body>
 
     <header>
+        <div class = "wrapper">
         <img src="logo.png" alt="Logo" class="logo">
         <nav>
           <a href="Landing.html">Home</a>
@@ -1096,6 +1100,8 @@
 
     <div class="youtube-container">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/LR5s0KPSbe8?si=Gkgn1bEC1-WLlsd-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
     </div>
 
 
