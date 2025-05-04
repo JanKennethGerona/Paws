@@ -12,6 +12,23 @@
       background-color: #defed8;
     }
 
+    .wrapper{
+    opacity: 0;
+    transform: translateY(100px);
+    animation: slideFadeIn 0.6s ease forwards;
+  }
+
+    @keyframes slideFadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(100px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     header {
       background-color: rgba(52, 52, 52, 0.2);
       display: flex;
@@ -814,7 +831,7 @@
   </style>
 </head>
 <body>
-
+  <div class = "wrapper">
     <header>
         <img src="logo.png" alt="Logo" class="logo">
         <nav>
@@ -852,6 +869,7 @@
       
     </div>
   </section>
+    </div>
 
   <!-- Contact Overlay -->
   <div class="overlay-background" id="overlay">
@@ -870,6 +888,7 @@
       </form>
     </div>
   </div>
+    
 
   <!-- Top 3 Questions Overlay -->
   <div class="top3-overlay-background" id="top3-overlay">
